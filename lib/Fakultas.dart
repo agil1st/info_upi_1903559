@@ -11,18 +11,71 @@ class Fakultas extends StatelessWidget {
         InkWell(
           child: Container(
             decoration: BoxDecoration(border: Border.all()),
-            padding: EdgeInsets.all(14),
-            child: Text("baris 1"),
-          ),
-          onTap: () {
-            //gunakan navigator untuk panggil RincianFakultas
-          },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 250,
+                  child: Column(children: [
+                  Padding(
+                      padding: const EdgeInsets.only(bottom:10),
+                      child: Text("FPMIPA",
+                      style:  TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 18)),
+                    ),
+                    Text(
+                      "Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam")
+                  ]),
+            ),
+            Column(children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: Image.network(
+                  'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+                  width: 100,
+                  height: 100,
+                ))
+            ]),
+          ],
         ),
-        Container(
+      ),
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return RincianFakultas();
+          }));
+        },
+      ),
+      Container(
             decoration: BoxDecoration(border: Border.all()),
-            padding: EdgeInsets.all(14),
-            child: Text("baris kedua")),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 250,
+                  child: Column(children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom:10),
+                      child: Text("FPMIPA",
+                      style:  TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 18)),
+                    ),
+                    Text(
+                      "Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam")
+                  ]),
+            ),
+            Column(children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: Image.network(
+                  'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+                  width: 100,
+                  height: 100,
+                ))
+            ]),
+          ],
+        ),
+      ),
       ]),
-    );
+   );
   }
 }
